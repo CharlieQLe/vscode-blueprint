@@ -3,7 +3,7 @@ import { LanguageClient, LanguageClientOptions, ServerOptions } from "vscode-lan
 let client: LanguageClient;
 
 export function activate(): void {
-    const serverOptions: ServerOptions = { command: "blueprint-compiler", args: ["lsp"] };
+    const serverOptions: ServerOptions = { command: "flatpak-spawn", args: ["--host", "blueprint-compiler", "lsp"] };
     const clientOptions: LanguageClientOptions = {
         documentSelector: [{ scheme: "file", language: "blueprint-gtk" }],
     };
